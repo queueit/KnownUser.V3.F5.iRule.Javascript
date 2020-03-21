@@ -28,8 +28,7 @@ when HTTP_REQUEST
    STREAM::disable 
    # Inserts the necessary JavaScript for EUM
    if {($enableEum == 1) && ([HTTP::header "Content-Type"] starts_with "text/html")} {
-    STREAM::expression {
-    @</title>@</title> 
+    STREAM::expression {@</title>@</title> 
     <script type="text/javascript" src="//static.queue-it.net/script/queueclient.min.js"></script>
     <script 
       data-queueit-c="[YOUR-CUSTOMER-ID]" 
